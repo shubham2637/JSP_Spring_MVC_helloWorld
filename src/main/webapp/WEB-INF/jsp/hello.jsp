@@ -6,7 +6,8 @@
 <meta charset="ISO-8859-1">
 <title>Demo App</title>
 </head>
-<body>
+<body>  
+    <li>Hello.jsp</li>
      <h2 align="center"> Hello ${name}!</h2>
 </body>
 </html>
