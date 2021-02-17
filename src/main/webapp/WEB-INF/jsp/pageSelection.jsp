@@ -23,7 +23,7 @@
                 </c:forEach>
             </select>
             <br/><br/>
-            <button type="submit"  class="btn btn-secondary">Subscribe</button>
+            <button type="submit"  class="btn btn-secondary">Sync</button>
 
         </form>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
