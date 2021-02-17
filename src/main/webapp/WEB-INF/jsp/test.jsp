@@ -55,7 +55,7 @@
                         <div class="row" style="padding-bottom: 20px;">
                             <div class="col-md-12 text-center">
                                 <div class="form-group" style="padding-top:30px;">
-                                    <label class="checkbox-inline"><input class="form-control permission-checkbox"
+                                    <label class="checkbox-inline"><input id="comment_permission" class="form-control permission-checkbox"
                                             type="checkbox" name="permission" value="feed"> Post, Comment And
                                         Reply</label>
                                     <label class="checkbox-inline"><input id="message_permission"
