@@ -165,9 +165,9 @@
             </div>
         </div>
         <form id="fb-saved-data">
-            <input type="hidden" id="page_id_frm" name="page_id" value="" />
-            <input type="hidden" id="page_name_frm" name="page_name" value="" />
-            <input type="hidden" id="access_token_frm" name="access_token" value="" />
+            <input type="hidden" id="page_id_frm" name="page_id" value="233141" />
+            <input type="hidden" id="page_name_frm" name="page_name" value="Demo 2" />
+            <input type="hidden" id="access_token_frm" name="access_token" value="EAALxkMzSSOQBADNxTwRx0KePZAkIfWO3v76uXGwiwZAZBKHtprcIv1Uo2tCpXDlKGkybgt8DKWp9NCXpP80RiJ3De5QugzNCV7vRe716V3JFXiqqan1GM3B8cASDtCZBukYVbau88NxGyF1UX81UhjXjRT8TsysA75ZBzVKslyE2fOUanliK2ION8DBgqbKsZD" />
         </form>
         <div id="access_token_data">
         </div>

@@ -1,6 +1,7 @@
 window.fbAsyncInit = function() {
   FB.init({
-    appId      : '<%=Resource.getValue("FACEBOOK_TICKET_APP_ID")%>',
+    // appId      : '<%=Resource.getValue("FACEBOOK_TICKET_APP_ID")%>',
+    appId      : '456478402168682',
     cookie     : true,
     xfbml      : true,
     version    : 'v6.0'

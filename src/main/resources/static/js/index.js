@@ -6,12 +6,12 @@ $(document).ready(function () {
 		} else {
 			$("#sync_button").hide();
 		}
-		$("#page_id_frm").val(selectedVal);
-		var accessToken = $("#" + selectedVal).val();
-		var pageName = $("#" + selectedVal).attr("data-page-name");
-		console.log(pageName);
-		$("#access_token_frm").val(accessToken);
-		$("#page_name_frm").val(pageName);
+		// $("#page_id_frm").val(selectedVal);
+		// var accessToken = $("#" + selectedVal).val();
+		// var pageName = $("#" + selectedVal).attr("data-page-name");
+		// console.log(pageName);
+		// $("#access_token_frm").val(accessToken);
+		// $("#page_name_frm").val(pageName);
 	});
 
 	$(".permission-checkbox").change(function () {
@@ -30,14 +30,18 @@ function step2() {
 	alert("Login success");
 	$("#step_1_body").slideUp();
 	$("#step_2_body").show();
-	var ck_string =["","","",""];
-    if(document.getElementById("comment_permission").checked)ck_string[0]="comment_permission";
-	if(document.getElementById("message_permission").checked)ck_string[1]="message_permission";
-	if(document.getElementById("mention_permission").checked)ck_string[2]="mention_permission";
-	if(document.getElementById("lead_gen_permission").checked)ck_string[3]="lead_gen_permission";
-	
-	
-	console.log("Selected Permisions : "+ck_string);
+	var subscription = "[";
+    if($("#lead_gen_permission").is(":checked")){
+      subscription = subscription + "'leadgen',";
+    }
+    if($("#message_permission").is(":checked")){
+      subscription = subscription + "'messages',";
+    }
+    if($("#mention_permission").is(":checked")){
+      subscription = subscription + "'mention',";
+    }
+    subscription = subscription + "'feed']";
+	console.log(subscription);
 	//TODO call FB server
 	var optionHtml = "<option></option>";
 		var id = 0; var pageName = "Demo1";
@@ -54,6 +58,7 @@ function step3() {
 	console.log("In step 3");
 	$("#step_2_body").slideUp();
 	$("#step_3_body").show();
+	sendDataToServer();
 	var msgAjax = "success";
 	//msgAjax="failed";
 	if (msgAjax == "success") {
@@ -64,11 +69,13 @@ function step3() {
 }
 function sendDataToServer() {
 	var fbFromData = $("#fb-saved-data").serialize();
+	console.log(fbFromData);
 	$.ajax({
-		url: "save-facebook-page-configuration",
+		url: "http://localhost:8080/save-facebook-page-configuration",
 		type: 'POST',
 		data: fbFromData,
 		success: function (msgAjax) {
+			//var msgAjax="success";
 			console.log(msgAjax);
 			$("#step_2_body").hide();
 			$("#step_3_body").show();
@@ -77,10 +84,10 @@ function sendDataToServer() {
 			} else {
 				$("#fb_page_fail_status").show();
 			}
-			crm_loader_hide();
+			//crm_loader_hide();
 		},
 		error: function () {
-			crm_loader_hide();
+			//crm_loader_hide();
 		}
 	});
 }
